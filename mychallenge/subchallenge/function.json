@@ -1,0 +1,33 @@
+{
+
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ],
+      "route": "chal/create/{name}/{description}/{guide}/{part}/{startdate}/{enddate}"
+      
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "doc",
+      "databaseName": "fitchals",
+      "collectionName": "chals",
+      "createIfNotExists": "true",
+      "ConnectionStringSetting": "AzureCosmosDBconnectionString"
+    },
+
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    }
+  ]
+}
