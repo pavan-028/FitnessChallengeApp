@@ -1,1 +1,1 @@
-# FitnessChallengeApp
+# Multi-platform fitness application
